@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  align-items: center;
+}
+form img {
+  position: relative;
+  left: 2rem;
+}
+
+.search {
+  padding: 1rem 1rem 1rem 3rem;
+}/*# sourceMappingURL=Search.css.map */

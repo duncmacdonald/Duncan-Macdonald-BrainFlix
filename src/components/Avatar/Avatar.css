@@ -1,0 +1,9 @@
+.avatar {
+  height: 2rem;
+  width: 2rem;
+  min-width: 2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  background-color: orange;
+}/*# sourceMappingURL=Avatar.css.map */

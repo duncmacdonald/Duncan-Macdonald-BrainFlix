@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/Header/Header';
+import NextVideos from './components/NextVideos/NextVideos';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
+import VideoZone from './components/VideoZone/VideoZone';
+import VideoInfo from './components/VideoInfo/VideoInfo';
+import videoData from "./data/video-details";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  state = {
+    currentVideo: videoData[0]
+  };
+
+  // changeVideo = (id) =>{
+  //   this.setState({ currentVideo: videoData[id]});
+  // }
+
+  render(){
+    console.log(this.state.currentVideo);
+    // console.log(videoData);
+    return (
+      <div className="App">
+        <Header />
+        <VideoZone poster={this.state.currentVideo.image}/>
+        <VideoInfo data={this.state.currentVideo}/>
+        {/* <Comments /> */}
+        <NextVideos />
+      </div>
+    );
+  }
+  
 }
 
 export default App;

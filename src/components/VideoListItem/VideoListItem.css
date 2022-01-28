@@ -1,0 +1,30 @@
+.videoListItem {
+  display: flex;
+  margin: 0.5rem 1rem;
+  max-width: 600px;
+}
+.videoListItem img {
+  height: 4rem;
+  min-width: 6rem;
+  max-width: 6rem;
+  border-radius: 0.25rem;
+  background-color: #E1E1E1;
+  flex-basis: 33%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.videoListItem__right {
+  display: block;
+  text-align: left;
+  padding: 0 0.5rem;
+  flex-basis: 66%;
+}
+.videoListItem__right h2 {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.videoListItem__right p {
+  padding: 0;
+  margin: 0;
+}/*# sourceMappingURL=VideoListItem.css.map */

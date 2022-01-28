@@ -1,0 +1,16 @@
+header {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+header__logo {
+  flex-basis: 100%;
+  justify-self: center;
+  margin-bottom: 1rem;
+}
+header__search {
+  margin: 1rem;
+}/*# sourceMappingURL=Header.css.map */
