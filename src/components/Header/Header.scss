@@ -1,4 +1,8 @@
-header {
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/fonts';
+@import '../../styles/partials/colors';
+
+.header {
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -6,14 +10,42 @@ header {
     align-items: center;
     gap: 1rem;
 
-    &__logo{
-        flex-basis: 100%;
-        justify-self: center;
-        margin-bottom: 1rem;
+    @include tablet{
+        padding-left: 3rem;
+        padding-right: 3rem;
+        justify-content: flex-end;
     }
 
-    &__search{
-        margin: 1rem;
+    &__logo{
+        padding: 0 33%;
+        justify-self: center;
+        height: 1.5625rem;
+
+        @include tablet {
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+            margin-right: auto;
+            justify-self: left;
+            flex-grow: 1000;
+            max-width: 7.5rem;
+        }
+
+
     }
+
+    form {
+        margin-left: -1rem;
+        flex-grow: 1000; //big number - this is the only component that grows
+        width: 10rem; //small number  - or else avatar drops to next line on small screens
+        ;
+    }
+
+    img:nth-of-type(2){
+        @include tablet {
+            order: 1;
+        }
+    }
+    
 
 }

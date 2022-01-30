@@ -1,13 +1,90 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+label, button {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 button {
   width: 100%;
-  height: 40px;
+  height: 2.5rem;
   min-width: 150px;
-  padding: 0 2rem;
+  padding: 0 1rem;
   border-style: none;
-  background-color: cyan;
+  background-color: #0095FF;
   border-radius: 0.25rem;
-  color: white;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button div {
+  align-self: center;
+}
+@media (min-width: 768px) {
+  button {
+    width: 9.375rem;
+  }
 }
 button:hover {
-  background-color: darkblue;
+  background-color: #0065AD;
+}
+button img {
+  width: 1.5rem;
 }/*# sourceMappingURL=Button.css.map */

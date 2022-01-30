@@ -1,6 +1,15 @@
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/fonts';
+@import '../../styles/partials/colors';
+
+
 form{
     display: flex;
     align-items: center;
+    
+    @include tablet {
+        max-width: 17rem;
+    }
 
     img{
         position: relative;
@@ -10,5 +19,13 @@ form{
 
 
 .search {
-    padding: 1rem 1rem 1rem 3rem;
+    padding: 1rem 1rem 1rem 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    height: 2.25rem;
+
+    @include tablet{
+        height: 2.5rem;
+        
+    }
 }

@@ -1,15 +1,16 @@
+@import '../../styles/partials/_breakpoints';
+@import '../../styles/partials/_colors';
+
 .avatar{
-    height: 2rem;
-    width: 2rem;
-    min-width: 2rem;
+    height: 2.25rem;
+    width: 2.25rem;
     object-fit: cover;
     border-radius: 50%;
-    // object-position: 10% 0;
-    background-color: orange
+    background-color: $Mercury;
 
     //bigger avatars on tablet+
-    // @include tablet {
-    //     height: 3rem;
-    //     min-width: 3rem;
-    // }
+    @include tablet {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
 }

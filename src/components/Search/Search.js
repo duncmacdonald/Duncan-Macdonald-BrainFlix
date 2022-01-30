@@ -7,7 +7,7 @@ export default function Search() {
     return(
         <form>
             <img src={magnify} alt='search'></img>
-            <input type="text" className="search" defaultValue="Search" />
+            <input type="text" className="search" placeholder="Search" />
         </form>
         
     )

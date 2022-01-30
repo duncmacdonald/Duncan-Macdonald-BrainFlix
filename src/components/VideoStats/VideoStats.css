@@ -1,5 +1,81 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+label, button {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .video-detail__stats {
-  border-top: 1px solid blueviolet;
-  border-bottom: 1px solid blueviolet;
-  margin: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #E1E1E1;
+  border-bottom: 1px solid #E1E1E1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 5rem;
+}
+.video-detail__stats > * {
+  width: 125px;
+  flex-basis: 40%;
+  padding: 0.3rem 0;
+  margin: 0;
+  height: 1rem;
+  box-sizing: border-box;
 }/*# sourceMappingURL=VideoStats.css.map */

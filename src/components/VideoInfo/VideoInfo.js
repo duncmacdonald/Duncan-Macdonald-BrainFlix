@@ -1,6 +1,7 @@
 import React from "react";
 import VideoStats from "../VideoStats/VideoStats";
 import VideoComments from "../VideoComments/VideoComments";
+import './VideoInfo.css';
 
 export default function VideoInfo(props) {
     let commentsJSX = props.data.comments.map((comment,index) => {return (<VideoComments comment={comment} key={`${comment.id}${index}`} />)});

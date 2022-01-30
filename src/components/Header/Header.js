@@ -11,7 +11,7 @@ export default function Header(){
     return (
         <header className="header">
             <img src={logo} className="header__logo" alt="Brainflix logo"></img>
-            <Search className="headder__search"/>
+            <Search className="header__search"/>
             <Avatar image={mo} className="header__avatar"/>
             <Button icon="../../assets/icons/upload.svg" text="upload" />
         </header>

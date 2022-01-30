@@ -1,0 +1,69 @@
+@import './_breakpoints.scss';
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+    src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: 'AvenirNext';
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+    src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+
+//Page Header
+h1{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+
+    @include tablet{
+        font-size: 2.0625rem;
+        line-height: 2.75rem;
+    }
+}
+
+//Section Header
+h2{
+    font-size: .75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+//Subheader
+h3{
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include tablet{
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+}
+
+//body
+p{
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+
+    @include tablet{
+        font-size: .875rem;
+        line-height: 1.375rem;
+    }
+}
+
+//labels & buttons
+label, button {
+    font-size: .75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}

@@ -12,12 +12,13 @@ class App extends React.Component{
     currentVideo: videoData[0]
   };
 
-  // changeVideo = (id) =>{
-  //   this.setState({ currentVideo: videoData[id]});
-  // }
+  //Listener for a next video being clicked, matches a video id, updates current video state
+  changeVideo = (id) =>{
+    this.setState({ currentVideo: videoData.find(video => video.id === id)});
+  }
 
   render(){
-    console.log(this.state.currentVideo);
+    // console.log(this.state.currentVideo);
     // console.log(videoData);
     return (
       <div className="App">
@@ -25,7 +26,7 @@ class App extends React.Component{
         <VideoZone poster={this.state.currentVideo.image}/>
         <VideoInfo data={this.state.currentVideo}/>
         {/* <Comments /> */}
-        <NextVideos />
+        <NextVideos nextVideoListener={this.changeVideo}/>
       </div>
     );
   }

@@ -6,7 +6,7 @@ import './VideoStats.css'
 export default function VideoStats(props){
     return (
         <div className='video-detail__stats'>
-            <h2>{props.channel}</h2>
+            <h2>{`By ${props.channel}`}</h2>
             <div>{props.timestamp}</div>
             <div><img src={eye} alt="views"></img>{props.views}</div>
             <div><img src={heart} alt="likes"></img>{props.likes}</div>
