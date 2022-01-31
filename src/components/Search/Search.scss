@@ -3,7 +3,7 @@
 @import '../../styles/partials/colors';
 
 
-form{
+.search{
     display: flex;
     align-items: center;
     
@@ -11,21 +11,31 @@ form{
         max-width: 17rem;
     }
 
-    img{
+    &__logo {
         position: relative;
         left: 2rem;
+    }
+
+    &__input {
+        padding: 1rem 1rem 1rem 2.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        height: 2.25rem;
+        border: 1px solid $Mercury;
+        border-radius: .25rem;
+        color: $BrainFlix-DarkBlack;
+        background-color: $Alabaster;
+    
+        @include tablet{
+            height: 2.5rem;
+            
+        }
+
+        &:active, &:focus{
+            border: 1px solid $BrainFlix-Blue;
+            outline: none;
+        }
     }
 } 
 
 
-.search {
-    padding: 1rem 1rem 1rem 2.5rem;
-    width: 100%;
-    box-sizing: border-box;
-    height: 2.25rem;
-
-    @include tablet{
-        height: 2.5rem;
-        
-    }
-}

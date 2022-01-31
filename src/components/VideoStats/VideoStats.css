@@ -71,11 +71,43 @@ label, button {
   flex-wrap: wrap;
   height: 5rem;
 }
+@media (min-width: 768px) {
+  .video-detail__stats {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-top: none;
+    height: 3rem;
+    gap: 2rem;
+  }
+  .video-detail__stats :nth-child(2) {
+    justify-self: left;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) and (min-width: 1280px) {
+  .video-detail__stats {
+    padding-right: 2rem;
+  }
+}
 .video-detail__stats > * {
-  width: 125px;
+  width: 15px;
   flex-basis: 40%;
   padding: 0.3rem 0;
   margin: 0;
   height: 1rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+@media (min-width: 768px) {
+  .video-detail__stats > * {
+    flex-basis: 5rem;
+  }
+}
+.video-detail__stats > * img {
+  padding-top: 0.25rem;
+  padding-right: 0.5rem;
+  height: 1rem;
 }/*# sourceMappingURL=VideoStats.css.map */

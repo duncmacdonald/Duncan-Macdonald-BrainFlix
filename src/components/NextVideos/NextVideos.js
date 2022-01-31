@@ -13,7 +13,7 @@ export default function NextVideos(props){
     )});
 
     return (
-        <section className="NextVideos">
+        <section className="nextVideos">
             <h3>Next Videos</h3>
             {videosJSX}
         </section>

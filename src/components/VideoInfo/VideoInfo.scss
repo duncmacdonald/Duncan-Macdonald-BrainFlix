@@ -5,6 +5,21 @@
 .video-detail {
     margin: 1rem;
 
+    @include tablet {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    @include desktop {
+        margin-right: 0;
+    }
+
+    &__description {
+        @include desktop {
+            padding-right: 2rem;
+        }
+    }
+
     h1 {
         margin: 0;
     }

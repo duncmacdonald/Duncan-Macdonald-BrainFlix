@@ -15,14 +15,45 @@
     //gap: 1rem;
     height: 5rem;
 
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        border-top: none;
+        height: 3rem;
+        gap: 2rem;
+
+        :nth-child(2){
+            justify-self: left;
+            margin-right: auto;
+        }
+
+        @include desktop {
+            padding-right: 2rem;
+        }
+    }
+
     & > * {
-        width: 125px;
+        width: 15px;
         flex-basis: 40%;
         padding: 0.3rem 0;
         margin: 0;
         height: 1rem;
         // padding-top: 1rem;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+
+        @include tablet {
+            flex-basis: 5rem;
+        }
+
+        img {
+            padding-top: 0.25rem;
+            padding-right: 0.5rem;
+            height: 1rem;
+        }
     }
 }
 

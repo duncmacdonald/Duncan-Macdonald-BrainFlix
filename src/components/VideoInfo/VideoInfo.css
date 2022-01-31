@@ -64,6 +64,22 @@ label, button {
 .video-detail {
   margin: 1rem;
 }
+@media (min-width: 768px) {
+  .video-detail {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .video-detail {
+    margin-right: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .video-detail__description {
+    padding-right: 2rem;
+  }
+}
 .video-detail h1 {
   margin: 0;
 }/*# sourceMappingURL=VideoInfo.css.map */

@@ -24,9 +24,11 @@ class App extends React.Component{
       <div className="App">
         <Header />
         <VideoZone poster={this.state.currentVideo.image}/>
+        <div className='desktopFlex'>
         <VideoInfo data={this.state.currentVideo}/>
         {/* <Comments /> */}
         <NextVideos nextVideoListener={this.changeVideo}/>
+        </div>
       </div>
     );
   }

@@ -76,6 +76,13 @@ label, button {
     justify-content: flex-end;
   }
 }
+@media (min-width: 1280px) {
+  .header {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .header__logo {
   padding: 0 33%;
   justify-self: center;

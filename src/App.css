@@ -1,0 +1,12 @@
+.desktopFlex {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1280px) {
+  .desktopFlex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}/*# sourceMappingURL=App.css.map */

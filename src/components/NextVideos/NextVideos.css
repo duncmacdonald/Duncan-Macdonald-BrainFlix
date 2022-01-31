@@ -1,4 +1,80 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+label, button {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nextVideos {
   margin-left: 1rem;
   text-align: left;
+}
+@media (min-width: 768px) {
+  .nextVideos {
+    margin-left: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nextVideos {
+    margin-left: 0;
+    padding-left: 2rem;
+    min-width: 25rem;
+    border-left: 1px solid #E1E1E1;
+  }
 }/*# sourceMappingURL=NextVideos.css.map */

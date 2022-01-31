@@ -1,3 +1,52 @@
-h7{
-    color: green
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/fonts';
+@import '../../styles/partials/colors';
+
+h3 {
+    margin-left: 0;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $Mercury;
+    margin-top: 1rem;
+    gap: 1rem;
+
+    @include desktop {
+        border-top: 1px solid $Mercury;
+        border-bottom: none;
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+
+
+
+    &__right {
+
+        width: 100%;
+
+        @include desktop {
+            padding-right: 2rem;
+            
+        }
+
+        div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+
+            h3, p {
+                margin: 0;
+            }
+        }
+
+        > p {
+            
+            @include tablet {
+                margin-top: 0;
+            }
+        }
+    }
 }

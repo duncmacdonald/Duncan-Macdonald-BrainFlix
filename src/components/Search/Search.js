@@ -5,9 +5,9 @@ import './Search.css';
 
 export default function Search() {
     return(
-        <form>
-            <img src={magnify} alt='search'></img>
-            <input type="text" className="search" placeholder="Search" />
+        <form className="search">
+            <img src={magnify} alt='search' className="search__logo"></img>
+            <input type="text" className="search__input" placeholder="Search" />
         </form>
         
     )

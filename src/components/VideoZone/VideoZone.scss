@@ -6,6 +6,8 @@
     background-color: $BrainFlix-DarkBlack;
     width: 100%;
 
+    
+
     video {
         box-sizing: border-box;
         width: 100%;
@@ -14,5 +16,6 @@
         @include tablet {
             padding: 0 3rem
         }
+
     }
 }

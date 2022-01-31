@@ -16,6 +16,12 @@
         justify-content: flex-end;
     }
 
+    @include desktop {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     &__logo{
         padding: 0 33%;
         justify-self: center;
