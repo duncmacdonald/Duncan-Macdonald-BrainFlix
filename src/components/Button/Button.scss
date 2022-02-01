@@ -12,13 +12,14 @@ button {
     border-style: none;
     background-color: $BrainFlix-Blue;
     border-radius: .25rem;
-    color: $White;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     div {
         align-self: center;
+        color: $White;
     }
 
     @include tablet {

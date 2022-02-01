@@ -4,13 +4,18 @@ import VideoListItem from "../VideoListItem/VideoListItem";
 import './NextVideos.css'
 
 export default function NextVideos(props){
-
     
-    // console.log({videoData})
-    
-    const videosJSX = videoData.map((e) => {return(
-        <VideoListItem image={e.image} channel={e.channel} title={e.title} key={e.id} id={e.id} nextVideoListener={props.nextVideoListener}/>
-    )});
+    const videosJSX = videoData.map((e) => {
+        let temp = e.title; //react doesn't update the VideoListLtems without this variable changing
+        if(e.id !== props.currentVideoId ){
+            if(e.title.length > 37 && props.isMobile){
+                temp = e.title.substring(0, e.title.substring(0,40).lastIndexOf(" ")) + "...";
+            }
+            return(
+            <VideoListItem image={e.image} channel={e.channel} title={temp} key={e.id} id={e.id} nextVideoListener={props.nextVideoListener}/>
+            )
+        }
+    });
 
     return (
         <section className="nextVideos">

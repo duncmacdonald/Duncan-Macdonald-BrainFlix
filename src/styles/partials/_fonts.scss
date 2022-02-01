@@ -1,4 +1,5 @@
 @import './_breakpoints.scss';
+@import './_colors.scss';
 
 @font-face {
     font-family: 'AvenirNext';
@@ -14,6 +15,10 @@
     font-weight: 700;
 }
 
+*{
+    font-family: AvenirNext;
+    color: $BrainFlix-Black;
+}
 
 //Page Header
 h1{

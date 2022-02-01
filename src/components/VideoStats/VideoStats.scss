@@ -33,8 +33,11 @@
         }
     }
 
+    div{
+        color: $Silver;
+    }
+
     & > * {
-        width: 15px;
         flex-basis: 40%;
         padding: 0.3rem 0;
         margin: 0;
@@ -46,11 +49,11 @@
         align-content: center;
 
         @include tablet {
-            flex-basis: 5rem;
+            flex-basis: auto;
         }
 
+
         img {
-            padding-top: 0.25rem;
             padding-right: 0.5rem;
             height: 1rem;
         }

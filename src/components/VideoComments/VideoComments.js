@@ -1,4 +1,5 @@
 import React from "react";
+import DateAgo from '../DateAgo/DateAgo';
 import Avatar from "../Avatar/Avatar"
 import './VideoComments.css'
 
@@ -9,7 +10,7 @@ export default function VideoComments(props) {
             <div className="comment__right">
                 <div>
                     <h3>{props.comment.name}</h3>
-                    <p>{props.comment.timestamp}</p> {/*format this*/}
+                    <p>{DateAgo(props.comment.timestamp)}</p>
                 </div>
                 <p>{props.comment.comment}</p>
             </div>

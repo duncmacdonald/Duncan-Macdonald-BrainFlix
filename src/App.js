@@ -5,11 +5,14 @@ import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoZone from './components/VideoZone/VideoZone';
 import VideoInfo from './components/VideoInfo/VideoInfo';
 import videoData from "./data/video-details";
+import videos from "./data/videos";
 import './App.css';
+import { wait } from '@testing-library/user-event/dist/utils';
 
 class App extends React.Component{
   state = {
-    currentVideo: videoData[0]
+    currentVideo: videoData[0],
+    isMobile: true,
   };
 
   //Listener for a next video being clicked, matches a video id, updates current video state
@@ -17,17 +20,21 @@ class App extends React.Component{
     this.setState({ currentVideo: videoData.find(video => video.id === id)});
   }
 
+  //Check screen width to see if we should be putting ellipsis on the next videos list 10 times a second. Please forgive me...
+  componentDidMount(){
+    setInterval(() =>{
+      (window.innerWidth < 570) ? this.setState({isMobile: true}) : this.setState({isMobile: false})
+    }, 100) }
+
+
   render(){
-    // console.log(this.state.currentVideo);
-    // console.log(videoData);
     return (
       <div className="App">
         <Header />
-        <VideoZone poster={this.state.currentVideo.image}/>
+        <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
         <div className='desktopFlex'>
         <VideoInfo data={this.state.currentVideo}/>
-        {/* <Comments /> */}
-        <NextVideos nextVideoListener={this.changeVideo}/>
+        <NextVideos currentVideoId={this.state.currentVideo.id} nextVideoListener={this.changeVideo} isMobile={this.state.isMobile}/>
         </div>
       </div>
     );

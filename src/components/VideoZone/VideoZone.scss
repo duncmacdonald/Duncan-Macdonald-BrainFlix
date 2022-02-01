@@ -5,8 +5,11 @@
 .video-player {
     background-color: $BrainFlix-DarkBlack;
     width: 100%;
+    position: relative;
 
-    
+    @include desktop {
+        max-height: 50rem;
+    }
 
     video {
         box-sizing: border-box;
@@ -17,5 +20,65 @@
             padding: 0 3rem
         }
 
+        @include desktop {
+            padding: 0 10%;
+            max-height: 50rem;
+        }
+
+    }
+
+    &__controls {
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 1rem;
+        width: 100%;
+        padding: 0 0.5rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        div {
+            background: rgba($BrainFlix-DarkBlack, 0.5);
+            border-radius: 0.25rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            
+            img {
+                height: 1rem;
+                padding: 0.5rem;
+            }
+
+        }
     }
 }
+
+#play-pause {
+    height: 2rem;
+    width: 3rem;
+    
+}
+
+#progress {
+    width: 70%;
+    max-width: 50rem;
+    height: 2rem;
+    color: $White;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0.5rem;
+
+    span {
+       color: $White;
+    }
+
+    
+}
+
+// #other-buttons {
+//     gap: 0.5rem
+
+// }

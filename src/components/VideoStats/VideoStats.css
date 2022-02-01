@@ -10,6 +10,11 @@
   src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
+* {
+  font-family: AvenirNext;
+  color: #323232;
+}
+
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -90,8 +95,10 @@ label, button {
     padding-right: 2rem;
   }
 }
+.video-detail__stats div {
+  color: #AFAFAF;
+}
 .video-detail__stats > * {
-  width: 15px;
   flex-basis: 40%;
   padding: 0.3rem 0;
   margin: 0;
@@ -103,11 +110,10 @@ label, button {
 }
 @media (min-width: 768px) {
   .video-detail__stats > * {
-    flex-basis: 5rem;
+    flex-basis: auto;
   }
 }
 .video-detail__stats > * img {
-  padding-top: 0.25rem;
   padding-right: 0.5rem;
   height: 1rem;
 }/*# sourceMappingURL=VideoStats.css.map */

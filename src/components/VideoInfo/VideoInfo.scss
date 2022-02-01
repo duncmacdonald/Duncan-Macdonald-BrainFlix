@@ -20,6 +20,18 @@
         }
     }
 
+    &__comment-count {
+
+        @include tablet{
+            padding-top: 1rem;
+        }
+
+        @include desktop{
+            padding-top: 2rem;
+        }
+        
+    }
+
     h1 {
         margin: 0;
     }

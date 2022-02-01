@@ -10,6 +10,11 @@
   src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
+* {
+  font-family: AvenirNext;
+  color: #323232;
+}
+
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -64,6 +69,12 @@ label, button {
 .video-player {
   background-color: #000000;
   width: 100%;
+  position: relative;
+}
+@media (min-width: 1280px) {
+  .video-player {
+    max-height: 50rem;
+  }
 }
 .video-player video {
   box-sizing: border-box;
@@ -74,4 +85,52 @@ label, button {
   .video-player video {
     padding: 0 3rem;
   }
+}
+@media (min-width: 1280px) {
+  .video-player video {
+    padding: 0 10%;
+    max-height: 50rem;
+  }
+}
+.video-player__controls {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.video-player__controls div {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.video-player__controls div img {
+  height: 1rem;
+  padding: 0.5rem;
+}
+
+#play-pause {
+  height: 2rem;
+  width: 3rem;
+}
+
+#progress {
+  width: 70%;
+  max-width: 50rem;
+  height: 2rem;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 0.5rem;
+}
+#progress span {
+  color: #FFFFFF;
 }/*# sourceMappingURL=VideoZone.css.map */

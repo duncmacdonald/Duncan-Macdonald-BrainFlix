@@ -10,6 +10,11 @@
   src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
+* {
+  font-family: AvenirNext;
+  color: #323232;
+}
+
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -78,6 +83,16 @@ label, button {
 @media (min-width: 1280px) {
   .video-detail__description {
     padding-right: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .video-detail__comment-count {
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .video-detail__comment-count {
+    padding-top: 2rem;
   }
 }
 .video-detail h1 {

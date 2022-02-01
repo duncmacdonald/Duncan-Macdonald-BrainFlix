@@ -10,6 +10,11 @@
   src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
   font-weight: 700;
 }
+* {
+  font-family: AvenirNext;
+  color: #323232;
+}
+
 h1 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -122,7 +127,8 @@ label, button {
 @media (min-width: 768px) {
   .newComment__right textarea {
     height: 2.5rem;
-    padding: 0.7rem 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0;
   }
 }
 .newComment__right textarea:active, .newComment__right textarea:focus {
