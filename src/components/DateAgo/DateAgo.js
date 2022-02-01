@@ -1,4 +1,5 @@
 
+//User friendly date presentation was required in 2 places, now it's a function that can be imported.
 export default function (timestamp) {
     const now = new Date();
     let past = new Date(timestamp);

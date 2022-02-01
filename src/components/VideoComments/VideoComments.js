@@ -3,6 +3,7 @@ import DateAgo from '../DateAgo/DateAgo';
 import Avatar from "../Avatar/Avatar"
 import './VideoComments.css'
 
+//Adds a video comment to the page
 export default function VideoComments(props) {
     return(
         <div className="comment">

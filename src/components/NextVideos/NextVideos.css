@@ -82,4 +82,7 @@ label, button {
     min-width: 25rem;
     border-left: 1px solid #E1E1E1;
   }
+}
+.nextVideos h3 {
+  color: #AFAFAF;
 }/*# sourceMappingURL=NextVideos.css.map */

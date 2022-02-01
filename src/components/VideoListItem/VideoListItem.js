@@ -1,6 +1,7 @@
 import React from "react";
 import './VideoListItem.css';
 
+//This is a video in the next video list
 export default function VideoListItem (props){
     return(
         <div className="videoListItem" onClick={() => {props.nextVideoListener(props.id)}}>

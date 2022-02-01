@@ -2,8 +2,11 @@
 // @import './styles/partials/fonts';
 @import './styles/partials/colors';
 
-.desktopFlex{
+.App {
+    min-width: 250px;
+}
 
+.desktopFlex{
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;

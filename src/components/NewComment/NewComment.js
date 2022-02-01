@@ -4,6 +4,7 @@ import Button from "../Button/Button"
 import mo from '../../assets/images/Mohan-muruge.jpg';
 import './NewComment.css'
 
+//Area of the page dedicated to adding a comment on a video
 export default function NewComment() {
     return(
         <section className="newComment">

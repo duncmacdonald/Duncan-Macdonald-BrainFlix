@@ -1,16 +1,15 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import NextVideos from './components/NextVideos/NextVideos';
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoZone from './components/VideoZone/VideoZone';
 import VideoInfo from './components/VideoInfo/VideoInfo';
 import videoData from "./data/video-details";
 import videos from "./data/videos";
 import './App.css';
-import { wait } from '@testing-library/user-event/dist/utils';
 
 class App extends React.Component{
   state = {
+    allVideos: videos,
     currentVideo: videoData[0],
     isMobile: true,
   };
@@ -32,9 +31,9 @@ class App extends React.Component{
       <div className="App">
         <Header />
         <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
-        <div className='desktopFlex'>
-        <VideoInfo data={this.state.currentVideo}/>
-        <NextVideos currentVideoId={this.state.currentVideo.id} nextVideoListener={this.changeVideo} isMobile={this.state.isMobile}/>
+        <div className='desktopFlex'> 
+          <VideoInfo data={this.state.currentVideo}/>
+          <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} nextVideoListener={this.changeVideo} isMobile={this.state.isMobile}/>
         </div>
       </div>
     );

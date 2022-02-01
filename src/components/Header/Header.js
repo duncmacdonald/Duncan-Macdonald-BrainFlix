@@ -7,6 +7,7 @@ import './Header.css';
 import logo from "../../assets/icons/BrainFlix-logo.svg";
 import mo from '../../assets/images/Mohan-muruge.jpg';
 
+//White bar at top of page
 export default function Header(){
     return (
         <header className="header">

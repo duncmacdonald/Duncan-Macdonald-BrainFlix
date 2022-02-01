@@ -4,6 +4,8 @@ import VideoComments from "../VideoComments/VideoComments";
 import NewComment from "../NewComment/NewComment";
 import './VideoInfo.css';
 
+
+//Displays video stats and the description
 export default function VideoInfo(props) {
     let commentsJSX = props.data.comments.map((comment,index) => {return (<VideoComments comment={comment} key={`${comment.id}${index}`} />)});
     return (

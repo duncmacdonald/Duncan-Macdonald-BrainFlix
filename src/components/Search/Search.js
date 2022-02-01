@@ -2,7 +2,7 @@ import React from "react";
 import magnify from'../../assets/icons/search.svg';
 import './Search.css';
 
-
+//This is the search bar used in the header
 export default function Search() {
     return(
         <form className="search">

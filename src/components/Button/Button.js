@@ -3,6 +3,7 @@ import upload from '../../assets/icons/upload.svg';
 import comment from '../../assets/icons/add_comment.svg';
 import './Button.css'
 
+//Draws a blue button, if the button text matches a known button use the appropriate image.
 export default function Button(props) {
     
     switch(props.text.toLowerCase()){

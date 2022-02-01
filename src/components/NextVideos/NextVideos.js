@@ -1,11 +1,12 @@
 import React from "react"; 
-import videoData from "../../data/videos";
 import VideoListItem from "../VideoListItem/VideoListItem";
 import './NextVideos.css'
 
+
+//column of video items
 export default function NextVideos(props){
     
-    const videosJSX = videoData.map((e) => {
+    const videosJSX = props.allVideos.map((e) => {
         let temp = e.title; //react doesn't update the VideoListLtems without this variable changing
         if(e.id !== props.currentVideoId ){
             if(e.title.length > 37 && props.isMobile){
