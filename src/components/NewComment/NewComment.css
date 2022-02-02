@@ -105,6 +105,9 @@ label, button {
     padding-right: 2rem;
   }
 }
+.newComment__right div {
+  margin-top: 0.125rem;
+}
 .newComment__right label {
   text-transform: uppercase;
   color: #AFAFAF;
