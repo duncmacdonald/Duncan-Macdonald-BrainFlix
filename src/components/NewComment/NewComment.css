@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+* {
+  font-family: AvenirNext;
+  color: #323232;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+label, button {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.newComment {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #E1E1E1;
+}
+@media (min-width: 1280px) {
+  .newComment {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+.newComment > img {
+  transform: translateY(1.5rem);
+}
+.newComment__right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .newComment__right {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .newComment__right div {
+    width: 100%;
+  }
+  .newComment__right button {
+    margin-top: 1.35rem;
+  }
+}
+@media (min-width: 1280px) {
+  .newComment__right {
+    padding-right: 2rem;
+  }
+}
+.newComment__right label {
+  text-transform: uppercase;
+  color: #AFAFAF;
+  margin-bottom: 0.25rem;
+}
+.newComment__right textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 6rem;
+  resize: none;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #E1E1E1;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #000000;
+  background-color: #FAFAFA;
+}
+@media (min-width: 768px) {
+  .newComment__right textarea {
+    height: 2.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0;
+  }
+}
+.newComment__right textarea:active, .newComment__right textarea:focus {
+  border: 1px solid #0095FF;
+  outline: none;
+}/*# sourceMappingURL=NewComment.css.map */

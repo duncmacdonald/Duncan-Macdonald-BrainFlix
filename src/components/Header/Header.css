@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+* {
+  font-family: AvenirNext;
+  color: #323232;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+label, button {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.header__logo {
+  padding: 0 33%;
+  justify-self: center;
+  height: 1.5625rem;
+}
+@media (min-width: 768px) {
+  .header__logo {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    margin-right: auto;
+    justify-self: left;
+    flex-grow: 1000;
+    max-width: 7.5rem;
+  }
+}
+.header form {
+  margin-left: -1rem;
+  flex-grow: 1000;
+  width: 10rem;
+}
+@media (min-width: 768px) {
+  .header img:nth-of-type(2) {
+    order: 1;
+  }
+}/*# sourceMappingURL=Header.css.map */

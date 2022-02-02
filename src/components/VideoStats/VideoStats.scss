@@ -1,0 +1,62 @@
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/fonts';
+@import '../../styles/partials/colors';
+
+.video-detail__stats {
+    
+    margin-top: 1rem;
+    border-top: 1px solid $Mercury;
+    border-bottom: 1px solid $Mercury;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    //gap: 1rem;
+    height: 5rem;
+
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        border-top: none;
+        height: 3rem;
+        gap: 2rem;
+
+        :nth-child(2){
+            justify-self: left;
+            margin-right: auto;
+        }
+
+        @include desktop {
+            padding-right: 2rem;
+        }
+    }
+
+    div{
+        color: $Silver;
+    }
+
+    & > * {
+        flex-basis: 40%;
+        padding: 0.3rem 0;
+        margin: 0;
+        height: 1rem;
+        // padding-top: 1rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+
+        @include tablet {
+            flex-basis: auto;
+        }
+
+
+        img {
+            padding-right: 0.5rem;
+            height: 1rem;
+        }
+    }
+}
+

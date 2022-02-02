@@ -1,0 +1,42 @@
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/fonts';
+@import '../../styles/partials/colors';
+
+
+.search{
+    display: flex;
+    align-items: center;
+    
+    @include tablet {
+        max-width: 17rem;
+    }
+
+    //position the logo "in" the search box (for the user)
+    &__logo {
+        position: relative;
+        left: 2rem;
+    }
+
+    &__input {
+        padding: 1rem 1rem 1rem 2.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        height: 2.25rem;
+        border: 1px solid $Mercury;
+        border-radius: .25rem;
+        color: $BrainFlix-DarkBlack;
+        background-color: $Alabaster;
+    
+        @include tablet{
+            height: 2.5rem;
+            
+        }
+
+        &:active, &:focus{
+            border: 1px solid $BrainFlix-Blue;
+            outline: none;
+        }
+    }
+} 
+
+

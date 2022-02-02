@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNext";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/fonts/alternative_files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+* {
+  font-family: AvenirNext;
+  color: #323232;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+label, button {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin-left: 0;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #E1E1E1;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+@media (min-width: 1280px) {
+  .comment {
+    border-top: 1px solid #E1E1E1;
+    border-bottom: none;
+    margin-top: 0;
+    padding-top: 1rem;
+  }
+}
+.comment__right {
+  width: 100%;
+}
+@media (min-width: 1280px) {
+  .comment__right {
+    padding-right: 2rem;
+  }
+}
+.comment__right div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.comment__right div h3, .comment__right div p {
+  margin: 0;
+}
+.comment__right div p {
+  color: #AFAFAF;
+}
+@media (min-width: 768px) {
+  .comment__right > p {
+    margin-top: 0;
+  }
+}/*# sourceMappingURL=VideoComments.css.map */

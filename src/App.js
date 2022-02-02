@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React from 'react';
+import Header from './components/Header/Header';
+import NextVideos from './components/NextVideos/NextVideos';
+import VideoZone from './components/VideoZone/VideoZone';
+import VideoInfo from './components/VideoInfo/VideoInfo';
+import videoData from "./data/video-details";
+import videos from "./data/videos";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  state = {
+    allVideos: videos,
+    currentVideo: videoData[0],
+    isMobile: true,
+  };
+
+  //Listener for a next video being clicked, matches a video id, updates current video state
+  changeVideo = (id) =>{
+    this.setState({ currentVideo: videoData.find(video => video.id === id)});
+  }
+
+  //Check screen width to see if we should be putting ellipsis on the next videos list 10 times a second. Please forgive me...
+  componentDidMount(){
+    setInterval(() =>{
+      (window.innerWidth < 570) ? this.setState({isMobile: true}) : this.setState({isMobile: false})
+    }, 100) }
+
+
+  render(){
+    return (
+      <div className="App">
+        <Header />
+        <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
+        <div className='desktopFlex'> 
+          <VideoInfo data={this.state.currentVideo}/>
+          <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} nextVideoListener={this.changeVideo} isMobile={this.state.isMobile}/>
+        </div>
+      </div>
+    );
+  }
+  
 }
 
 export default App;

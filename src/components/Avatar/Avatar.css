@@ -1,0 +1,14 @@
+.avatar {
+  height: 2.25rem;
+  width: 2.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  background-color: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .avatar {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}/*# sourceMappingURL=Avatar.css.map */

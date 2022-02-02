@@ -1,0 +1,23 @@
+@import '../../styles/partials/breakpoints';
+@import '../../styles/partials/fonts';
+@import '../../styles/partials/colors';
+
+.nextVideos {
+    margin-left: 1rem;
+    text-align: left;
+
+    @include tablet {
+        margin-left: 3rem;
+    }
+
+    @include desktop {
+        margin-left: 0;
+        padding-left: 2rem;
+        min-width: 25rem;
+        border-left: 1px solid $Mercury;
+    }
+
+    h3 {
+        color: $Silver;
+    }
+}
