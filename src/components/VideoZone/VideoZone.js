@@ -17,8 +17,6 @@ export default function VideoZone(props){
                     <img src={fullscreen}></img>
                     <img src={volume_up}></img>
                 </div>
-
-
             </div>
         </section>
     )
