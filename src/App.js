@@ -1,41 +1,40 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './components/Header/Header';
 import NextVideos from './components/NextVideos/NextVideos';
 import VideoZone from './components/VideoZone/VideoZone';
 import VideoInfo from './components/VideoInfo/VideoInfo';
+import Watch from './pages/Watch/Watch';
+import Upload from './pages/Upload/Upload';
 import videoData from "./data/video-details";
 import videos from "./data/videos";
 import './App.css';
+import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
 class App extends React.Component{
-  state = {
-    allVideos: videos,
-    currentVideo: videoData[0],
-    isMobile: true,
-  };
 
-  //Listener for a next video being clicked, matches a video id, updates current video state
-  changeVideo = (id) =>{
-    this.setState({ currentVideo: videoData.find(video => video.id === id)});
-  }
-
-  //Check screen width to see if we should be putting ellipsis on the next videos list 10 times a second. Please forgive me...
-  componentDidMount(){
-    setInterval(() =>{
-      (window.innerWidth < 570) ? this.setState({isMobile: true}) : this.setState({isMobile: false})
-    }, 100) }
 
 
   render(){
     return (
-      <div className="App">
+      <BrowserRouter>
         <Header />
-        <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
-        <div className='desktopFlex'> 
-          <VideoInfo data={this.state.currentVideo}/>
-          <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} nextVideoListener={this.changeVideo} isMobile={this.state.isMobile}/>
-        </div>
-      </div>
+        <Switch>
+          <Route 
+            path='/' exact 
+            component={Watch} 
+          />
+          <Route 
+            path='/upload' 
+            component={Upload}
+          />
+          <Route 
+            path='/v/:videoID'
+            component={Watch} 
+          />
+        </Switch>
+      </BrowserRouter>
+     
     );
   }
   

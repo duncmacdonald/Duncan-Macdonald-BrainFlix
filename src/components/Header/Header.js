@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react";
+import { Link } from "react-router-dom";
 import Search from "../Search/Search";
 import Button from "../Button/Button";
 import Avatar from "../Avatar/Avatar";
@@ -11,10 +12,10 @@ import mo from '../../assets/images/Mohan-muruge.jpg';
 export default function Header(){
     return (
         <header className="header">
-            <img src={logo} className="header__logo" alt="Brainflix logo"></img>
+            <Link to="/"><img src={logo} className="header__logo" alt="Brainflix logo"></img></Link>
             <Search className="header__search"/>
             <Avatar image={mo} className="header__avatar"/>
-            <Button icon="../../assets/icons/upload.svg" text="upload" />
+            <Link to="/upload"><Button text="upload" /></Link>
         </header>
     )
     
