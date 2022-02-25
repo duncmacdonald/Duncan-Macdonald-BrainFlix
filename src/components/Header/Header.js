@@ -12,7 +12,7 @@ import mo from '../../assets/images/Mohan-muruge.jpg';
 export default function Header(){
     return (
         <header className="header">
-            <Link to="/"><img src={logo} className="header__logo" alt="Brainflix logo"></img></Link>
+            <Link to="/" className="header__logo"><img src={logo}  alt="Brainflix logo"></img></Link>
             <Search className="header__search"/>
             <Avatar image={mo} className="header__avatar"/>
             <Link to="/upload"><Button text="upload" /></Link>

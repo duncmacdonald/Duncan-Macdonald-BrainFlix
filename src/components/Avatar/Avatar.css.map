@@ -1,1 +1,1 @@
-{"version":3,"sources":["Avatar.scss","../../styles/partials/_colors.scss","../../styles/partials/_breakpoints.scss"],"names":[],"mappings":"AAGA;EACI,eAAA;EACA,cAAA;EACA,oBAAA;KAAA,iBAAA;EACA,kBAAA;EACA,yBCGM;ADLV;AECI;EFJJ;IASQ,cAAA;IACA,aAAA;EAFN;AACF","file":"Avatar.css"}
+{"version":3,"sources":["Avatar.scss","../../styles/partials/_colors.scss","Avatar.css","../../styles/partials/_breakpoints.scss"],"names":[],"mappings":"AAGA;EACI,eAAA;EACA,cAAA;EACA,oBAAA;KAAA,iBAAA;EACA,kBAAA;EACA,yBCGM;ACLV;ACCI;EHJJ;IASQ,cAAA;IACA,aAAA;EEFN;AACF","file":"Avatar.css"}

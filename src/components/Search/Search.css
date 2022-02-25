@@ -68,6 +68,7 @@ label, button {
 
 .search {
   display: flex;
+  flex-direction: row;
   align-items: center;
 }
 @media (min-width: 768px) {

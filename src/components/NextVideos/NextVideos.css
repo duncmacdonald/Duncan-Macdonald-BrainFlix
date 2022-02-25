@@ -85,4 +85,8 @@ label, button {
 }
 .nextVideos h3 {
   color: #AFAFAF;
+}
+
+a {
+  text-decoration: none;
 }/*# sourceMappingURL=NextVideos.css.map */

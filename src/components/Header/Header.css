@@ -113,4 +113,12 @@ label, button {
   .header img:nth-of-type(2) {
     order: 1;
   }
+}
+.header a {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header a {
+    width: 9.375rem;
+  }
 }/*# sourceMappingURL=Header.css.map */

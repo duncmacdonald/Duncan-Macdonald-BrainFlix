@@ -1,5 +1,6 @@
 import React from "react"; 
 import VideoListItem from "../VideoListItem/VideoListItem";
+import { Link } from "react-router-dom";
 import './NextVideos.css'
 
 
@@ -13,7 +14,9 @@ export default function NextVideos(props){
                 temp = e.title.substring(0, e.title.substring(0,40).lastIndexOf(" ")) + "...";
             }
             return(
-            <VideoListItem image={e.image} channel={e.channel} title={temp} key={e.id} id={e.id} nextVideoListener={props.nextVideoListener}/>
+                <Link to = {`/v/${e.id}`} key={e.id}>
+                    <VideoListItem image={e.image} channel={e.channel} title={temp} key={e.id} id={e.id} nextVideoListener={props.nextVideoListener}/>
+                </Link>
             )
         }
     });

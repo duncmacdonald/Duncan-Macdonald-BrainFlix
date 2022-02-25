@@ -81,6 +81,7 @@ button {
 button div {
   align-self: center;
   color: #FFFFFF;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   button {

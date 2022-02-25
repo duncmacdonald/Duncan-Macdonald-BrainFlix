@@ -45,7 +45,6 @@
         margin-left: -1rem;
         flex-grow: 1000; //big number - this is the only component that grows
         width: 10rem; //small number  - or else avatar drops to next line on small screens
-        ;
     }
 
     img:nth-of-type(2){
@@ -54,5 +53,12 @@
         }
     }
     
+    a {
+        width: 100%;
+
+        @include tablet {
+            width: 9.375rem;
+        }
+    }
 
 }

@@ -1,6 +1,105 @@
-form{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    display: flex;
-    flex-direction: column;
+@import '../../styles/partials/_breakpoints';
+@import '../../styles//partials/_colors';
+
+.upload {
+    border-top: 1px solid $Mercury;
+    padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 3rem;
+    }
+
+    &__image {
+        border-radius: 0.25rem;
+        margin-bottom: 1rem;
+        max-width: 19.25rem;
+
+        @include desktop {
+            margin-bottom: 0;
+        }
+    }
+
+    &__shortText {
+        height: 1rem;
+    }
+
+    &__longText {
+        height: 4rem;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            padding-top: 1rem;
+            margin-bottom: 1rem;
+            border-top: 1px solid $Mercury;
+            border-bottom: 1px solid $Mercury;
+        }
+
+        @include desktop{
+            flex-direction: row;
+            gap: 1rem;
+            align-items: stretch;
+        }
+
+
+        label {
+            color: $Silver;
+        }
+        textarea{
+            margin-bottom: 1rem;
+            padding: 0.7rem;    
+            resize: none;
+            color: $BrainFlix-DarkBlack;
+            background-color: $Alabaster;
+            border: 1px solid $Mercury;
+            border-radius: 0.25rem;
+            outline: none;
+            
+        }
+    }
+
+    &__image{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__fields{
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            width: 100%;
+        }
+    }
+
+    &__buttons {
+
+        @include tablet {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0
+        }
+    }
+
+    &__cancel {
+        margin-top: 2rem;
+        color: $BrainFlix-Blue;
+        width: 100%;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            margin-top: 0;
+            width: 9rem;
+        }
+    }
+
 }
+
