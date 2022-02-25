@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from './components/Header/Header';
 import Watch from './pages/Watch/Watch';
 import Upload from './pages/Upload/Upload';
-import './App.css';
+//import './App.css';
 
 
 class App extends React.Component{

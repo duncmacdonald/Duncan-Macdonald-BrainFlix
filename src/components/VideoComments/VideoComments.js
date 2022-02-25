@@ -12,8 +12,9 @@ export default function VideoComments(props) {
             <div className="comment__right">
                 <div>
                     <h3>{props.comment.name}</h3>
-                        <div><p>{DateAgo(props.comment.timestamp)}</p>
-                        <img className="trash" src={del} alt="trashcan" onClick={() => props.deleteComment(props.comment.id)}></img>
+                        <div>
+                            <p>{DateAgo(props.comment.timestamp)}</p>
+                            <img className="trash" src={del} alt="trashcan" onClick={() => props.deleteComment(props.comment.id)}></img>
                     </div>
                 </div>
                 <p>{props.comment.comment}</p>

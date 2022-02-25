@@ -3,6 +3,7 @@ import axios from "axios";
 import VideoZone from "../../components/VideoZone/VideoZone";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import NextVideos from "../../components/NextVideos/NextVideos";
+import "./Watch.css"
 
 export default class Watch extends React.Component {
     state = {
@@ -16,7 +17,7 @@ export default class Watch extends React.Component {
       apiURL = "https://project-2-api.herokuapp.com";
       apiKey = "?api_key=b458a4cd-9df6-48dc-a293-1ef0964f215c";
     
-
+      //get detailed info for one video
       getVideo(id) {
         axios.get(`${this.apiURL}/videos/${id}${this.apiKey}`)
               .then(result => {
@@ -26,6 +27,7 @@ export default class Watch extends React.Component {
               })
       }
 
+      //take a comment from state, submit it to the server, clear the comment if successful
       postComment = (event) => {
         event.preventDefault();
         axios.post(`${this.apiURL}/videos/${this.state.currentVideo.id}/comments${this.apiKey}`, {name:this.state.name, comment:this.state.comment}, {"Content-Type": "application/json"} )
@@ -35,19 +37,22 @@ export default class Watch extends React.Component {
           .catch(error => console.log(error));
       }
 
+      //update state with the content of form field
       handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
       }
 
+      //delete a specific comment then get the current video data from the server
       deleteComment = (id) => {
         axios.delete(`${this.apiURL}/videos/${this.state.currentVideo.id}/comments/${id}${this.apiKey}`)
           .then(() => this.getVideo(this.state.currentVideo.id));
       }
 
-    
-      componentDidUpdate(){
-        
+      //Figure out which video should be loaded based on the url parameters
+      componentDidUpdate(){  
         const urlVideoID = this.props.match.params.videoID;
+
+        //If no video specified by url
         if(this.state.currentVideo !== undefined){
           if(urlVideoID === undefined){
             this.getVideo(this.state.allVideos[0].id);
@@ -60,15 +65,12 @@ export default class Watch extends React.Component {
         }
       }
 
-
+      //Get the video list from the server
       componentDidMount(){
-        //Get the video list from the server
         axios.get(`${this.apiURL}/videos${this.apiKey}`)
           .then(videoList => {
             this.setState({allVideos: videoList.data})
-          });
-
-          
+          });   
       }
 
 
@@ -78,11 +80,11 @@ export default class Watch extends React.Component {
     
       return(
           <div className="App">
-              <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
-              <div className='desktopFlex'> 
+            <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
+            <div className='desktopFlex'> 
               <VideoInfo data={this.state.currentVideo} comment={this.state.comment} listener={this.handleChange} submit={this.postComment} deleteComment={this.deleteComment}/>
               <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} isMobile={this.state.isMobile}/>
-              </div>
+            </div>
           </div>
       )
       

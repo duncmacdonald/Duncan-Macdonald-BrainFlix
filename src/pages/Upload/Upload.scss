@@ -9,6 +9,12 @@
         padding: 0 3rem;
     }
 
+    @include desktop {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     &__image {
         border-radius: 0.25rem;
         margin-bottom: 1rem;
