@@ -3,59 +3,72 @@ import axios from "axios";
 import VideoZone from "../../components/VideoZone/VideoZone";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import NextVideos from "../../components/NextVideos/NextVideos";
-import videoData from "../../data/video-details";
 
 export default class Watch extends React.Component {
     state = {
         allVideos: [],
         currentVideo: {},
         isMobile: true,
+        name: "Duncan",
+        comment: "",
       };
 
       apiURL = "https://project-2-api.herokuapp.com";
       apiKey = "?api_key=b458a4cd-9df6-48dc-a293-1ef0964f215c";
     
-      //Listener for a next video being clicked, matches a video id, updates current video state
-      changeVideo = (id) =>{
+
+      getVideo(id) {
         axios.get(`${this.apiURL}/videos/${id}${this.apiKey}`)
-          .then(result => this.setState({currentVideo: result.data}));
-        //sprint 1
-        // this.setState({ currentVideo: videoData.find(video => video.id === id)});
+              .then(result => {
+                //Don't update state if id is unchanged, you'll get infinite loops
+                if(this.state.currentVideo.id !== result.data.id || this.state.currentVideo.comments.length !== result.data.comments.length) this.setState({currentVideo: result.data});
+         
+              })
       }
+
+      postComment = (event) => {
+        event.preventDefault();
+        axios.post(`${this.apiURL}/videos/${this.state.currentVideo.id}/comments${this.apiKey}`, {name:this.state.name, comment:this.state.comment}, {"Content-Type": "application/json"} )
+          .then(result => {
+            this.setState({comment: ""});
+          })
+          .catch(error => console.log(error));
+      }
+
+      handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+      }
+
+      deleteComment = (id) => {
+        axios.delete(`${this.apiURL}/videos/${this.state.currentVideo.id}/comments/${id}${this.apiKey}`)
+          .then(() => this.getVideo(this.state.currentVideo.id));
+      }
+
     
-      
+      componentDidUpdate(){
+        
+        const urlVideoID = this.props.match.params.videoID;
+        if(this.state.currentVideo !== undefined){
+          if(urlVideoID === undefined){
+            this.getVideo(this.state.allVideos[0].id);
+          } 
+          //otherwise load the video specified by the URL
+          else {
+              let newVideo = this.state.allVideos.find(video => video.id === urlVideoID) 
+              this.getVideo(newVideo.id);
+          }
+        }
+      }
+
+
       componentDidMount(){
-        const urlVideoID = this.props.match.params.videoID
-        // console.log(urlVideoID);
-
-        //Check screen width to see if we should be putting ellipsis on the next videos list 10 times a second. Please forgive me...
-        setInterval(() =>{
-          (window.innerWidth < 570) ? this.setState({isMobile: true}) : this.setState({isMobile: false})
-        }, 100) 
-      
-
         //Get the video list from the server
         axios.get(`${this.apiURL}/videos${this.apiKey}`)
           .then(videoList => {
             this.setState({allVideos: videoList.data})
-  
-            //If no url paramater for video, load the first video to play on the home page
-            if(urlVideoID === undefined){
-              axios.get(`${this.apiURL}/videos/${videoList.data[0].id}${this.apiKey}`)
-                .then(result => this.setState({currentVideo: result.data}))
-            } 
-            //otherwise load the video specified by the URL
-            else{
+          });
 
-              let newVideo = videoList.data.find(video => video.id === urlVideoID)
-              console.log(newVideo.id);
-              
-              axios.get(`${this.apiURL}/videos/${newVideo.id}${this.apiKey}`)
-                .then(result => this.setState({currentVideo: result.data}));
-            }
-
-          })
-
+          
       }
 
 
@@ -67,8 +80,8 @@ export default class Watch extends React.Component {
           <div className="App">
               <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
               <div className='desktopFlex'> 
-              <VideoInfo data={this.state.currentVideo}/>
-              <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} nextVideoListener={this.changeVideo} isMobile={this.state.isMobile}/>
+              <VideoInfo data={this.state.currentVideo} comment={this.state.comment} listener={this.handleChange} submit={this.postComment} deleteComment={this.deleteComment}/>
+              <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} isMobile={this.state.isMobile}/>
               </div>
           </div>
       )

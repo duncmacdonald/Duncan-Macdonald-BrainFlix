@@ -15,7 +15,7 @@ export default function NextVideos(props){
             }
             return(
                 <Link to = {`/v/${e.id}`} key={e.id}>
-                    <VideoListItem image={e.image} channel={e.channel} title={temp} key={e.id} id={e.id} nextVideoListener={props.nextVideoListener}/>
+                    <VideoListItem image={e.image} channel={e.channel} title={temp} key={e.id} id={e.id} />
                 </Link>
             )
         }

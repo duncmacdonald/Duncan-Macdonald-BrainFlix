@@ -108,4 +108,9 @@ h3 {
   .comment__right > p {
     margin-top: 0;
   }
+}
+
+.trash {
+  height: 1rem;
+  padding-left: 1rem;
 }/*# sourceMappingURL=VideoComments.css.map */
