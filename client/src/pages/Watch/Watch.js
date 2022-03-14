@@ -4,6 +4,7 @@ import VideoZone from "../../components/VideoZone/VideoZone";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import "./Watch.css"
+import loading from "../../assets/icons/Bar-Preloader-3.gif"
 
 export default class Watch extends React.Component {
     state = {
@@ -76,7 +77,7 @@ export default class Watch extends React.Component {
 
     render() {
       //don't do anything if the data is not loaded
-      if(this.state.currentVideo.id === undefined) return (<div></div>);
+      if(this.state.currentVideo.id === undefined) return (<img src={loading} alt="page is loading"></img>);
     
       return(
           <div className="App">

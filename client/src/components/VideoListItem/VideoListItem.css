@@ -71,6 +71,11 @@ label, button {
   margin: 0.5rem 1rem 0.5rem 0;
   max-width: 600px;
 }
+@media (min-width: 768px) {
+  .videoListItem {
+    margin-bottom: 1.75rem;
+  }
+}
 .videoListItem img {
   height: 4rem;
   min-width: 6rem;
