@@ -14,8 +14,8 @@ export default class Watch extends React.Component {
         comment: "",
       };
 
-      apiURL = "https://project-2-api.herokuapp.com";
-      apiKey = "?api_key=b458a4cd-9df6-48dc-a293-1ef0964f215c";
+      apiURL = "http://localhost:8080";
+      apiKey = "?api_key=duncan";
     
       //get detailed info for one video
       getVideo(id) {
