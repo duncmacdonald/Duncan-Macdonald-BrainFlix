@@ -29,8 +29,24 @@ router.route("/")
             )}));
     })
     .post((req, res) => {
+        const newVideo = {
+            id: uuidv4(),
+            title: req.body.title,
+            channel: req.body.channel,
+            image: req.body.image,
+            description: req.body.description,
+            views: "0",
+            likes: "0",
+            duration: "1:00",
+            video: "https://project-2-api.herokuapp.com/stream",
+            timestamp: Date.now(),
+            comments: [],
+        }
+        const allVideos = readVideos()
+        writeVideos([...allVideos, newVideo]);
+
         console.log("video posting endpoint");
-        res.status(200).send("Duncan rocks!");
+        res.status(200).json(newVideo);
     });
 
 // Get detailed info about a video
