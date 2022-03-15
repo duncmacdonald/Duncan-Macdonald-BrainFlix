@@ -3,10 +3,13 @@ const { v4: uuidv4 } = require('uuid');
 const app = express();
 const cors = require('cors');
 
+require('dotenv').config();
+const {PORT} = process.env;
+
 //require video routes
 const videos = require('./routes/videos');
 
-const PORT = 8080;
+
 
 //api keys get wiped when the server restarts, "duncan" key is a secret
 const keys = ["duncan"];
@@ -14,6 +17,7 @@ const keys = ["duncan"];
 app.use(cors());
 app.use(express.json());
 app.use('/static', express.static('public/images'));
+
 
 //Create an API key 
 app.get('/register',(req,res) =>{

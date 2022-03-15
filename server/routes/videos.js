@@ -2,6 +2,12 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { v4: uuidv4 } = require('uuid');
+const multer = require("multer");
+
+require('dotenv').config();
+const {PORT, BACKEND_URL} = process.env;
+
+const upload = multer({ dest: "uploads/" });
 
 // Read data file
 function readVideos() {
@@ -14,6 +20,8 @@ function readVideos() {
 function writeVideos(data){
     fs.writeFileSync("./data/videos.json", JSON.stringify(data));
 }
+
+
 
 // Get condensed list of video information
 router.route("/")
@@ -28,12 +36,12 @@ router.route("/")
                 }
             )}));
     })
-    .post((req, res) => {
-        const newVideo = {
+    .post(upload.single('image'), (req, res) => {
+        let newVideo = {
             id: uuidv4(),
             title: req.body.title,
             channel: req.body.channel,
-            image: req.body.image,
+            image: "",
             description: req.body.description,
             views: "0",
             likes: "0",
@@ -42,11 +50,18 @@ router.route("/")
             timestamp: Date.now(),
             comments: [],
         }
-        const allVideos = readVideos()
-        writeVideos([...allVideos, newVideo]);
+        if(req.file) {
+            console.log(req.file);
+        } else {
+            newVideo.image = `${BACKEND_URL}:${PORT}/static/Upload-video-preview.jpg`;
+        }
+
+        // const allVideos = readVideos()
+        // writeVideos([...allVideos, newVideo]);
 
         console.log("video posting endpoint");
-        res.status(200).json(newVideo);
+        res.send(newVideo);
+        // res.status(200).json(newVideo);
     });
 
 // Get detailed info about a video
