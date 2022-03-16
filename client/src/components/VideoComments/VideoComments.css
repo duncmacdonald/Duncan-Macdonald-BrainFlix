@@ -113,4 +113,7 @@ h3 {
 .trash {
   height: 1rem;
   padding-left: 1rem;
+}
+.trash:hover {
+  filter: invert(12%) sepia(63%) saturate(6234%) hue-rotate(200deg) brightness(87%) contrast(156%);
 }/*# sourceMappingURL=VideoComments.css.map */

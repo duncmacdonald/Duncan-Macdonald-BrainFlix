@@ -7,27 +7,45 @@ import './Upload.css';
 export default class Upload extends React.Component {
     state = {
         goHome: false,
-        videoPoster: "http://localhost:8080/static/Upload-video-preview.jpg",
+        videoPosterURL: "http://localhost:8080/static/Upload-video-preview.jpg",
+        videoPosterObj: undefined,
         videoTitle: "Title",
         videoDescription: "",
+        
     }
 
     handleChange(event) {
         this.setState({[event.target.name] : event.target.value});
     }
 
+    handleNewPoster =(event) =>{
+        console.log(URL.createObjectURL(event.target.files[0]));
+        this.setState({ videoPosterObj:event.target.files[0], videoPosterURL : URL.createObjectURL(event.target.files[0])});
+    }
+
     publishListener = () => {
-        const newVideo = {
-            title: this.state.videoTitle,
-            channel: "Dummy Data",
-            image: this.state.videoPoster,
-            description: this.state.videoDescription,
+
+        let fd = new FormData();
+        fd.append("title", this.state.videoTitle);
+        fd.append("channel", "Dummy Data");
+        fd.append("description", this.state.videoDescription);
+        if(this.state.videoPosterObj){
+            fd.append("image", this.state.videoPosterObj, this.state.videoPosterObj.name);
         }
-        axios.post("http://localhost:8080/videos/?api_key=duncan", newVideo, {"Content-Type": "application/json"})
-            .then(result => {
-                console.log(result);
-                this.setState({goHome: true})
-            });
+
+        axios.post("http://localhost:8080/videos/?api_key=duncan", fd, { headers: {"Content-Type": "multipart/form-data"}})
+        .then(result => {
+            console.log(result);
+            this.setState({goHome: true})
+        });
+        
+
+
+        // axios.post("http://localhost:8080/videos/?api_key=duncan", newVideo, {"Content-Type": "application/json"})
+        //     .then(result => {
+        //         console.log(result);
+        //         this.setState({goHome: true})
+        //     });
           
     }
 
@@ -44,7 +62,7 @@ export default class Upload extends React.Component {
                 <form>
                     <div className="upload__image">
                         <label>Video Thumbnail</label>
-                        <img src={this.state.videoPoster} alt="Bicycle moving fast" className="upload__image"></img>
+                        <img src={this.state.videoPosterURL} alt="video thumbnail image" className="upload__image"></img>
                     </div>
                     <div className="upload__fields">
                         <label>Title your video</label>
@@ -64,6 +82,7 @@ export default class Upload extends React.Component {
                             placeholder="Add a description to your video"
                             onChange={(event) => this.handleChange(event)} 
                         ></textarea>
+                        <input type="file" onChange={this.handleNewPoster}></input>                    
                     </div>
                 </form>
                 <div className="upload__buttons">

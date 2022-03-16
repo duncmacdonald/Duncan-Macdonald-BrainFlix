@@ -10,7 +10,7 @@ export default function VideoStats(props){
             <h2>{`By ${props.channel}`}</h2>
             <div>{DateAgo(props.timestamp)}</div>
             <div><img src={eye} alt="views"></img>{props.views}</div>
-            <div><img src={heart} alt="likes"></img>{props.likes}</div>
+            <div><img className="heart" src={heart} alt="likes" onClick={props.likeListener}></img>{props.likes}</div>
         </div>
     )
 }

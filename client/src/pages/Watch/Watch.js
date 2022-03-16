@@ -49,6 +49,14 @@ export default class Watch extends React.Component {
           .then(() => this.getVideo(this.state.currentVideo.id));
       }
 
+      likeListener = () => {
+        console.log("Like Listener");
+        axios.put(`${this.apiURL}/videos/${this.state.currentVideo.id}/likes${this.apiKey}`)
+          .then(result =>{
+            this.setState({currentVideo : result});
+          });
+      } 
+
       //Figure out which video should be loaded based on the url parameters
       componentDidUpdate(){  
         const urlVideoID = this.props.match.params.videoID;
@@ -83,7 +91,7 @@ export default class Watch extends React.Component {
           <div className="App">
             <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
             <div className='desktopFlex'> 
-              <VideoInfo data={this.state.currentVideo} comment={this.state.comment} listener={this.handleChange} submit={this.postComment} deleteComment={this.deleteComment}/>
+              <VideoInfo data={this.state.currentVideo} comment={this.state.comment} listener={this.handleChange} submit={this.postComment} deleteComment={this.deleteComment} likeListener={this.likeListener}/>
               <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} isMobile={this.state.isMobile}/>
             </div>
           </div>

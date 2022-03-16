@@ -7,7 +7,17 @@ const multer = require("multer");
 require('dotenv').config();
 const {PORT, BACKEND_URL} = process.env;
 
-const upload = multer({ dest: "uploads/" });
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) { cb(null,"./public/images")},
+    filename: function (req, file, cb) {
+      cb(null, Date.now() + file.originalname)
+    }
+  })
+
+
+const upload = multer({ storage: storage });
 
 // Read data file
 function readVideos() {
@@ -51,17 +61,18 @@ router.route("/")
             comments: [],
         }
         if(req.file) {
-            console.log(req.file);
+            newVideo.image = `${BACKEND_URL}:${PORT}/static/${req.file.filename}`;
+
         } else {
+            //Use the bicycle image if no image is provided
             newVideo.image = `${BACKEND_URL}:${PORT}/static/Upload-video-preview.jpg`;
         }
 
-        // const allVideos = readVideos()
-        // writeVideos([...allVideos, newVideo]);
+        const allVideos = readVideos()
+        writeVideos([...allVideos, newVideo]);
 
         console.log("video posting endpoint");
-        res.send(newVideo);
-        // res.status(200).json(newVideo);
+        res.status(200).json(newVideo);
     });
 
 // Get detailed info about a video
@@ -77,7 +88,7 @@ router.post("/:id/comments", (req, res) => {
         let allVideos = readVideos();
         writeVideos(allVideos.map(video => { 
                 if(video.id === req.params.id){
-                    video.comments.push(comment);
+                    video.comments.unshift(comment);
                 }
                 return video
             }));
