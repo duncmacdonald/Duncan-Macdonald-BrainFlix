@@ -95,11 +95,6 @@ label, button {
     margin-right: auto;
   }
 }
-@media (min-width: 1280px) {
-  .video-player video {
-    max-height: 50rem;
-  }
-}
 .video-player__controls {
   box-sizing: border-box;
   position: absolute;
@@ -139,7 +134,25 @@ label, button {
   align-items: center;
   padding-right: 0.5rem;
 }
+#progress .slider {
+  width: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 0.3rem;
+  background-color: #AFAFAF;
+}
+#progress .slider .slider::--webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
 #progress span {
   color: #FFFFFF;
   font-size: 0.75rem;
+  line-height: 0.75rem;
+  padding-top: 2px;
 }/*# sourceMappingURL=VideoZone.css.map */

@@ -50,7 +50,6 @@ export default class Watch extends React.Component {
       }
 
       likeListener = () => {
-        console.log("Like Listener");
         axios.put(`${this.apiURL}/videos/${this.state.currentVideo.id}/likes${this.apiKey}`)
           .then(result =>{
             this.setState({currentVideo : result});
@@ -89,7 +88,7 @@ export default class Watch extends React.Component {
     
       return(
           <div className="App">
-            <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration}/>
+            <VideoZone poster={this.state.currentVideo.image} duration={this.state.currentVideo.duration} video={this.state.currentVideo.video}/>
             <div className='desktopFlex'> 
               <VideoInfo data={this.state.currentVideo} comment={this.state.comment} listener={this.handleChange} submit={this.postComment} deleteComment={this.deleteComment} likeListener={this.likeListener}/>
               <NextVideos allVideos={this.state.allVideos} currentVideoId={this.state.currentVideo.id} isMobile={this.state.isMobile}/>
